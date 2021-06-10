@@ -1,3 +1,19 @@
+/* -------webkit-scrollbar--------- */
+::-webkit-scrollbar{
+  width: 10px;
+}
+::-webkit-scrollbar-track{
+  background-color: #000;
+}
+::-webkit-scrollbar-thumb{
+  background-color: red;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-button{
+  background-color: slateblue;
+}
 /* ------------------ */
 /* PAGE */
 .page{
@@ -102,26 +118,126 @@ body._touch .menu__list li {
 
 section{
   height: 90vh;
-  background-color: #C0EDEA;
+  
   border-bottom: 2px solid black;
 }
 
 /* COVER */
 .cover{
+  height: 100vh;
     margin-top: 100px;
+    background-color: #C0EDEA;
+
+    position: relative;
+}
+
+
+.cover__label{
+  height: 10vh;
+
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: hsl(176, 56%, 60%);
+}
+
+.cover__label.fixed{
+  position: fixed;
+  top: 100px;
+  width: 100%;
+  height: 10vh;
+
+  z-index: 100;
+
+}
+
+
+/* ABOUT */
+.about{
+  height: 90vh;
+  position: relative;
+  background-color: hsl(115, 56%, 84%);
+}
+
+.about__label{
+  height: 10vh;
+
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: hsl(115, 56%, 60%);
+}
+
+.about__label.fixed{
+  position: fixed;
+  top: calc(100px + 10vh);
+  width: 100%;
+  height: 10vh;
+
+  z-index: 100;
+
 }
 
 
 
 
+/* PRICING*/
+.pricing{
+  background-color: hsl(33, 56%, 84%);
+  height: 80vh;
+  position: relative;
+}
 
+.pricing__label{
+  height: 10vh;
 
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: hsl(33, 56%, 60%);
+}
+
+.pricing__label.fixed{
+  position: fixed;
+  top: calc(100px + 20vh);
+  width: 100%;
+  height: 10vh;
+
+  z-index: 100;
+
+}
 
 
 
 /* CONTACT */
 .contact{
+  height: 70vh;
+  position: relative;
+  background-color: hsl(300, 56%, 84%);
     margin-bottom: 50vh;
+}
+
+.contact__label{
+  height: 10vh;
+
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: hsl(300, 56%, 60%);
+}
+
+.contact__label.fixed{
+  position: fixed;
+  top: calc(100px + 30vh);
+  width: 100%;
+  height: 10vh;
+
+  z-index: 100;
+
+}
+
+.label__link{
+  cursor: pointer;
 }
 
 
