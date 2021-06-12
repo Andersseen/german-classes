@@ -1,3 +1,7 @@
+*{
+  box-sizing: border-box;
+}
+
 /* -------webkit-scrollbar--------- */
 ::-webkit-scrollbar{
   width: 10px;
@@ -126,11 +130,18 @@ section{
 .cover{
   height: 100vh;
     margin-top: 100px;
-    background-color: #C0EDEA;
+    
 
     position: relative;
 }
 
+.cover__container{
+  height: 90vh;
+  background-color: #C0EDEA;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
 
 .cover__label{
   height: 10vh;
@@ -156,7 +167,7 @@ section{
 .about{
   height: 90vh;
   position: relative;
-  background-color: hsl(115, 56%, 84%);
+
 }
 
 .about__label{
@@ -166,6 +177,14 @@ section{
   bottom: 0;
   width: 100%;
   background-color: hsl(115, 56%, 60%);
+}
+
+.about__container{
+  height: 80vh;
+  background-color: hsl(115, 56%, 84%);
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 .about__label.fixed{
@@ -183,7 +202,7 @@ section{
 
 /* PRICING*/
 .pricing{
-  background-color: hsl(33, 56%, 84%);
+
   height: 80vh;
   position: relative;
 }
@@ -195,6 +214,14 @@ section{
   bottom: 0;
   width: 100%;
   background-color: hsl(33, 56%, 60%);
+}
+
+.pricing__container{
+  height: 70vh;
+  background-color: hsl(33, 56%, 84%);
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 .pricing__label.fixed{
@@ -213,7 +240,7 @@ section{
 .contact{
   height: 70vh;
   position: relative;
-  background-color: hsl(300, 56%, 84%);
+
     margin-bottom: 50vh;
 }
 
@@ -224,6 +251,14 @@ section{
   bottom: 0;
   width: 100%;
   background-color: hsl(300, 56%, 60%);
+}
+
+.contact__container{
+  height: 60vh;
+  background-color: hsl(300, 56%, 84%);
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 .contact__label.fixed{
@@ -262,6 +297,7 @@ section{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    padding-top: 50px;
 }
 
 .footer__block > span{
