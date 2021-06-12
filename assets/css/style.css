@@ -22,6 +22,7 @@
 /* PAGE */
 .page{
   min-height: 100%;
+  overflow-x: hidden;
 }
 
 
@@ -122,44 +123,44 @@ body._touch .menu__list li {
 
 section{
   height: 90vh;
-  
-  border-bottom: 2px solid black;
+  background-color: antiquewhite;
 }
 
 /* COVER */
 .cover{
-  height: 100vh;
+  
     margin-top: 100px;
     
-
-    position: relative;
+    height: 100vh;
+    position: relative
 }
 
 .cover__container{
   height: 90vh;
-  background-color: #C0EDEA;
   position: absolute;
   top: 0;
   width: 100%;
 }
 
 .cover__label{
-  height: 10vh;
+  height: 0;
 
   position: absolute;
   bottom: 0;
   width: 100%;
   background-color: hsl(176, 56%, 60%);
+
+  transition: height 1s ease;
 }
 
 .cover__label.fixed{
   position: fixed;
   top: 100px;
   width: 100%;
-  height: 10vh;
-
+  
   z-index: 100;
 
+  height: 10vh;
 }
 
 
@@ -167,21 +168,22 @@ section{
 .about{
   height: 90vh;
   position: relative;
-
 }
 
 .about__label{
-  height: 10vh;
+  height: 0;
 
   position: absolute;
   bottom: 0;
   width: 100%;
   background-color: hsl(115, 56%, 60%);
+  
+  transition: transform .2s ease, height 1s ease;
 }
 
 .about__container{
   height: 80vh;
-  background-color: hsl(115, 56%, 84%);
+
   position: absolute;
   top: 0;
   width: 100%;
@@ -195,6 +197,7 @@ section{
 
   z-index: 100;
 
+  height: 10vh;
 }
 
 
@@ -202,23 +205,24 @@ section{
 
 /* PRICING*/
 .pricing{
-
   height: 80vh;
   position: relative;
 }
 
 .pricing__label{
-  height: 10vh;
+  height: 0;
 
   position: absolute;
   bottom: 0;
   width: 100%;
   background-color: hsl(33, 56%, 60%);
+
+  transition: transform .2s ease, height 1s ease;
 }
 
 .pricing__container{
   height: 70vh;
-  background-color: hsl(33, 56%, 84%);
+
   position: absolute;
   top: 0;
   width: 100%;
@@ -231,6 +235,8 @@ section{
   height: 10vh;
 
   z-index: 100;
+
+  height: 10vh;
 
 }
 
@@ -245,17 +251,19 @@ section{
 }
 
 .contact__label{
-  height: 10vh;
+  height: 0;
 
   position: absolute;
   bottom: 0;
   width: 100%;
   background-color: hsl(300, 56%, 60%);
+
+  transition:  height 1s ease;
 }
 
 .contact__container{
   height: 60vh;
-  background-color: hsl(300, 56%, 84%);
+
   position: absolute;
   top: 0;
   width: 100%;
@@ -268,6 +276,9 @@ section{
   height: 10vh;
 
   z-index: 100;
+
+  height: 10vh;
+
 
 }
 
