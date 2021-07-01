@@ -15,7 +15,7 @@ const contactLabel = document.querySelector('.contact__label')
 
 window.onscroll = () => {
 
-    let coverContainer = document.querySelector('.cover__container').scrollHeight
+    let coverContainer = document.querySelector('.cover__container').scrollHeight - 1;
     let aboutContainer = document.querySelector('.about__container').scrollHeight
     let pricingContainer = document.querySelector('.pricing__container').scrollHeight
     let contactContainer = document.querySelector('.contact__container').scrollHeight
