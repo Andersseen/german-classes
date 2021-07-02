@@ -7,6 +7,8 @@ const coverLabel = document.querySelector('.cover__label')
 
 const aboutLabel = document.querySelector('.about__label')
 
+const yoLabel = document.querySelector('.yo__label')
+
 const pricingLabel = document.querySelector('.pricing__label')
 
 const contactLabel = document.querySelector('.contact__label')
@@ -17,6 +19,7 @@ window.onscroll = () => {
 
     let coverContainer = document.querySelector('.cover__container').scrollHeight - 1;
     let aboutContainer = document.querySelector('.about__container').scrollHeight
+    let yoContainer = document.querySelector('.yo__container').scrollHeight
     let pricingContainer = document.querySelector('.pricing__container').scrollHeight
     let contactContainer = document.querySelector('.contact__container').scrollHeight
 
@@ -36,21 +39,29 @@ window.onscroll = () => {
         aboutLabel.classList.remove('fixed')
     };
 
-    if (scrollTop >= (coverContainer + aboutContainer + pricingContainer)) {
+    if (scrollTop >= (coverContainer + aboutContainer + yoContainer)) {
+        yoLabel.classList.add('fixed')
+    } else {
+        yoLabel.classList.remove('fixed')
+    };
+
+    if (scrollTop >= (coverContainer + aboutContainer + yoContainer + pricingContainer)) {
         pricingLabel.classList.add('fixed')
     } else {
         pricingLabel.classList.remove('fixed')
     };
 
 
-    if (scrollTop >= (coverContainer + aboutContainer + pricingContainer + contactContainer)) {
+    if (scrollTop >= (coverContainer + aboutContainer + yoContainer + pricingContainer + contactContainer)) {
         contactLabel.classList.add('fixed')
     } else {
         contactLabel.classList.remove('fixed')
     };
 
     // onscroll transform footer
-    let heightNesesary = (coverContainer + aboutContainer + pricingContainer + contactContainer) - 200;
+    let heightNesesary = (coverContainer + aboutContainer + yoContainer + pricingContainer + contactContainer) - (footerContainer - 200);
+    console.log(heightNesesary);
+    console.log(window.scrollY);
 
     let footerBlocks = document.querySelectorAll('.footer__block')
 
@@ -73,6 +84,7 @@ const findSection = (e) => {
 
     let coverContainer = document.querySelector('.cover__container').scrollHeight
     let aboutContainer = document.querySelector('.about__container').scrollHeight
+    let yoContainer = document.querySelector('.yo__container').scrollHeight
     let pricingContainer = document.querySelector('.pricing__container').scrollHeight
 
     let x = e.toElement
@@ -89,15 +101,21 @@ const findSection = (e) => {
             behavior: 'smooth',
         });
     }
-    if (x.className == 'pricing__label label__link fixed') {
+    if (x.className == 'yo__label label__link fixed') {
         window.scrollTo({
             top: coverContainer + aboutContainer,
             behavior: 'smooth',
         });
     }
+    if (x.className == 'pricing__label label__link fixed') {
+        window.scrollTo({
+            top: coverContainer + aboutContainer + yoContainer,
+            behavior: 'smooth',
+        });
+    }
     if (x.className == 'contact__label label__link fixed') {
         window.scrollTo({
-            top: coverContainer + aboutContainer + pricingContainer + 5,
+            top: coverContainer + aboutContainer + yoContainer + pricingContainer + 5,
             behavior: 'smooth',
         });
     }
@@ -123,6 +141,7 @@ const onMenuLinkClick = (e) => {
 
     let coverContainer = document.querySelector('.cover__container').scrollHeight
     let aboutContainer = document.querySelector('.about__container').scrollHeight
+    let yoContainer = document.querySelector('.yo__container').scrollHeight
     let pricingContainer = document.querySelector('.pricing__container').scrollHeight
 
 
@@ -142,16 +161,23 @@ const onMenuLinkClick = (e) => {
         });
         e.preventDefault();
     }
-    if (findLink.dataset.goto == '.pricing') {
+    if (findLink.dataset.goto == '.yo') {
         window.scrollTo({
             top: coverContainer + aboutContainer,
             behavior: 'smooth',
         });
         e.preventDefault();
     }
+    if (findLink.dataset.goto == '.pricing') {
+        window.scrollTo({
+            top: coverContainer + aboutContainer + yoContainer,
+            behavior: 'smooth',
+        });
+        e.preventDefault();
+    }
     if (findLink.dataset.goto == '.contact') {
         window.scrollTo({
-            top: coverContainer + aboutContainer + pricingContainer + 5,
+            top: coverContainer + aboutContainer + yoContainer + pricingContainer + 5,
             behavior: 'smooth',
         });
         e.preventDefault();

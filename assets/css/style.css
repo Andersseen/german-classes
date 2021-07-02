@@ -271,8 +271,8 @@ section{
 
 /* ABOUT */
 .about{
-  height: 90vh;
-  position: relative;
+  height: 95vh;
+  position: relative
 }
 
 .about__label{
@@ -288,7 +288,8 @@ section{
 
 .about__container{
 
-  height: 85vh;
+  height: 90vh;
+  
 
   position: absolute;
   top: 0;
@@ -304,8 +305,6 @@ section{
   position: fixed;
   top: calc(100px + 5vh);
   width: 100%;
-  height: 10vh;
-
   z-index: 100;
 
   height: 5vh;
@@ -359,10 +358,102 @@ section{
 }
 
 
+/* por que yo */
+.yo{
+  height: 90vh;
+  position: relative;
+}
+
+.yo__label{
+  height: 0;
+
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--label-color);
+  
+  transition: height .5s ease;
+}
+
+.yo__container{
+
+  height: 85vh;
+
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  gap: 3rem;
+}
+
+.yo__label.fixed{
+  position: fixed;
+  top: calc(100px + 10vh);
+  width: 100%;
+  z-index: 100;
+
+  height: 5vh;
+}
+.yo__label > h6{
+  color: var(--text-color);
+  font-size: 2rem;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 5vh;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease;
+}
+
+.yo__label.fixed > h6{
+  opacity: 1;
+  visibility: visible;
+}
+
+.yo__wrapper{
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr; 
+  gap: 1rem 1rem; 
+  grid-template-areas: 
+    "block1 block2 block3"
+    "block4 block5 block6";
+  justify-content: center; 
+  align-content: center; 
+  justify-items: center; 
+  align-items: center; 
+}
+.yo__block{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.yo__block > img{
+  width: 20%;
+}
+.yo__block > h4{
+  font-size: 2rem;
+  color: var(--text-secondary-color-color);
+}
+.yo__block-1 > h4{
+  font-size: 1.5rem;
+}
+.yo__block-1 { grid-area: block1; }
+.yo__block-2 { grid-area: block2; }
+.yo__block-3 { grid-area: block3; }
+.yo__block-4 { grid-area: block4; }
+.yo__block-5 { grid-area: block5; }
+.yo__block-6 { grid-area: block6; }
+
 
 /* PRICING*/
 .pricing{
-  height: 80vh;
+  height: 85vh;
   position: relative;
 }
 
@@ -378,7 +469,7 @@ section{
 }
 
 .pricing__container{
-  height: 75vh;
+  height: 80vh;
 
   position: absolute;
   top: 0;
@@ -392,7 +483,7 @@ section{
 
 .pricing__label.fixed{
   position: fixed;
-  top: calc(100px + 10vh);
+  top: calc(100px + 15vh);
   width: 100%;
   height: 10vh;
 
@@ -422,6 +513,10 @@ section{
   grid-template-columns: 1fr 1fr; 
   grid-template-rows: 1fr 1fr; 
   gap: 3rem 5rem; 
+  justify-content: center; 
+  align-content: center; 
+  justify-items: center; 
+  align-items: center; 
   grid-template-areas: 
     "block1 block2"
     "block3 block4"; 
@@ -476,10 +571,10 @@ section{
 
 /* CONTACT */
 .contact{
-  height: 75vh;
+  height: 80vh;
   position: relative;
 
-    margin-bottom: 66vh;
+    margin-bottom: 65vh;
 }
 
 .contact__label{
@@ -494,7 +589,7 @@ section{
 }
 
 .contact__container{
-  height: 65vh;
+  height: 75vh;
 
   position: absolute;
   top: 0;
@@ -508,7 +603,7 @@ section{
 
 .contact__label.fixed{
   position: fixed;
-  top: calc(100px + 15vh);
+  top: calc(100px + 20vh);
   width: 100%;
   height: 10vh;
 
@@ -598,7 +693,7 @@ section{
 
   overflow-y: hidden;
   width: 100%;
-  height: 66vh;
+  height: 65vh;
   background-color: var(--footer-color);
 
   position: fixed;
