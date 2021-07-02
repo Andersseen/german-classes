@@ -20,6 +20,8 @@ window.onscroll = () => {
     let pricingContainer = document.querySelector('.pricing__container').scrollHeight
     let contactContainer = document.querySelector('.contact__container').scrollHeight
 
+    let footerContainer = document.querySelector('.page__footer').scrollHeight
+
     let scrollTop = window.scrollY
 
     if (scrollTop >= coverContainer) {
@@ -46,6 +48,22 @@ window.onscroll = () => {
     } else {
         contactLabel.classList.remove('fixed')
     };
+
+    // onscroll transform footer
+    let heightNesesary = (coverContainer + aboutContainer + pricingContainer + contactContainer) - 200;
+
+    let footerBlocks = document.querySelectorAll('.footer__block')
+
+    if (window.scrollY >= heightNesesary) {
+        footerBlocks.forEach(el => {
+            el.classList.add('active');
+        })
+    } else {
+        footerBlocks.forEach(el => {
+            el.classList.remove('active');
+        })
+    }
+
 
 
 }
@@ -144,3 +162,5 @@ const onMenuLinkClick = (e) => {
 menuLinks.forEach(menuLink => {
     menuLink.addEventListener('click', onMenuLinkClick);
 });
+
+
